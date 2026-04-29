@@ -1,187 +1,956 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swamp Fresh | Trash Bin Cleaning & Pressure Washing</title>
-    <style>
-        :root {
-            --blue: #0088cc;
-            --light-blue: #e6f7ff;
-            --green: #4CAF50;
-            --dark: #333;
-            --white: #fff;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--white);
-            padding: 15px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        /* New CSS for your uploaded logo */
-        .logo-img {
-            max-height: 90px; /* You can change this number to make the logo bigger or smaller */
-            width: auto;
-        }
-        .hero {
-            background: linear-gradient(rgba(0, 136, 204, 0.8), rgba(0, 136, 204, 0.8)), url('https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 20px;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s;
-            margin: 10px;
-        }
-        .btn-green {
-            background-color: var(--green);
-            color: var(--white);
-        }
-        .btn-green:hover {
-            background-color: #45a049;
-        }
-        .btn-white {
-            background-color: var(--white);
-            color: var(--blue);
-        }
-        .btn-white:hover {
-            background-color: #f4f4f4;
-        }
-        .services {
-            padding: 60px 10%;
-            text-align: center;
-            background-color: var(--light-blue);
-        }
-        .services h2 {
-            font-size: 36px;
-            color: var(--blue);
-            margin-bottom: 40px;
-        }
-        .grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 300px;
-        }
-        .card h3 {
-            color: var(--green);
-        }
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--dark);
-            margin: 15px 0;
-        }
-        .how-it-works {
-            padding: 60px 10%;
-            text-align: center;
-        }
-        footer {
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 30px 10%;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swamp Fresh Bin Cleaning Co. — Gainesville & Newberry, FL</title>
+<meta name="description" content="Veteran-owned curbside trash bin cleaning and pressure washing in Newberry and Gainesville, Florida. Kill bacteria, kill the smell, kill the mosquitoes. From $30/month." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --swamp-deep: #0c4a6e;       /* deep ocean blue */
+    --swamp: #1ea7e0;            /* logo bright blue */
+    --moss: #0d7fb8;             /* mid blue */
+    --fresh: #7ac943;            /* logo electric green */
+    --mint: #cdebb6;             /* soft green tint */
+    --sky: #d6f0fb;              /* soft blue tint */
+    --cream: #f0f7fb;            /* very light blue cream */
+    --paper: #fbfdff;            /* near-white blue cream */
+    --ink: #0c2435;              /* deep navy ink */
+    --ash: #5a6a78;
+    --line: rgba(12, 36, 53, 0.12);
+    --gold: #ffc94a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 247, 239, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-brand img { width: 36px; height: 36px; object-fit: contain; }
+  .nav-brand span {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+  }
+  .nav-cta {
+    background: var(--swamp);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--swamp-deep); transform: translateY(-1px); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 80px 0 100px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(30, 167, 224, 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 10% 80%, rgba(122, 201, 67, 0.14), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--swamp);
+    background: var(--mint);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--swamp);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--moss);
+    font-weight: 400;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--ash);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--swamp);
+    color: var(--paper);
+    box-shadow: 0 8px 24px -6px rgba(45, 80, 67, 0.4);
+  }
+  .btn-primary:hover {
+    background: var(--swamp-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -6px rgba(45, 80, 67, 0.5);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-disc {
+    position: absolute;
+    inset: 14%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(30, 167, 224, 0.15), rgba(122, 201, 67, 0.08) 60%, transparent 75%);
+  }
+  .hero-disc::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed rgba(30, 167, 224, 0.25);
+    animation: spin 60s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero-logo-mark {
+    position: relative;
+    z-index: 2;
+    width: 88%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 32px rgba(12, 74, 110, 0.25));
+    animation: float 5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hero-trust {
+    position: absolute;
+    bottom: 4%;
+    right: -2%;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px 18px;
+    box-shadow: 0 12px 30px -10px rgba(20, 36, 31, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-trust-icon {
+    width: 38px; height: 38px;
+    background: var(--mint);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .hero-trust-text { font-size: 13px; line-height: 1.3; }
+  .hero-trust-text strong { display: block; font-size: 14px; }
+  .hero-trust-text small { color: var(--ash); }
+
+  /* ===== STATS BAR ===== */
+  .stats {
+    background: var(--swamp-deep);
+    color: var(--paper);
+    padding: 40px 0;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: var(--fresh);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(245, 241, 232, 0.65);
+    margin-top: 8px;
+  }
+
+  /* ===== SECTIONS ===== */
+  section.block { padding: 100px 0; }
+  .eyebrow {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(34px, 4.5vw, 52px);
+    margin-bottom: 16px;
+  }
+  .section-lede {
+    font-size: 18px;
+    color: var(--ash);
+    max-width: 600px;
+    margin-bottom: 56px;
+  }
+
+  /* ===== BENEFITS ===== */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .benefit-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s;
+  }
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--moss);
+    box-shadow: 0 16px 40px -12px rgba(45, 80, 67, 0.18);
+  }
+  .benefit-icon {
+    width: 48px; height: 48px;
+    background: var(--mint);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .benefit-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .benefit-card p {
+    color: var(--ash);
+    font-size: 15px;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .how {
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    counter-reset: step;
+  }
+  .step {
+    counter-increment: step;
+    position: relative;
+    padding-top: 28px;
+  }
+  .step::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    top: -8px;
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 600;
+    color: var(--fresh);
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .step h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .step p { color: var(--ash); font-size: 15px; }
+
+  /* ===== PRICING ===== */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+  }
+  .price-card {
+    background: var(--paper);
+    border: 1.5px solid var(--line);
+    border-radius: 24px;
+    padding: 36px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+  .price-card.featured {
+    background: var(--swamp);
+    border-color: var(--swamp);
+    color: var(--paper);
+    transform: scale(1.04);
+    box-shadow: 0 24px 60px -16px rgba(45, 80, 67, 0.4);
+  }
+  .price-card.featured .price-name,
+  .price-card.featured .price-num,
+  .price-card.featured h4 { color: var(--paper); }
+  .price-card.featured .price-cycle,
+  .price-card.featured .price-blurb,
+  .price-card.featured .price-features li { color: rgba(245, 241, 232, 0.85); }
+  .price-card.featured .featured-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .price-name {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--moss);
+    margin-bottom: 8px;
+  }
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .price-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .price-cycle { color: var(--ash); font-size: 15px; }
+  .price-blurb {
+    color: var(--ash);
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .price-card.featured .price-blurb {
+    border-bottom-color: rgba(245, 241, 232, 0.2);
+  }
+  .price-features {
+    list-style: none;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .price-features li {
+    padding: 7px 0 7px 24px;
+    position: relative;
+    font-size: 14px;
+  }
+  .price-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--fresh);
+    font-weight: 700;
+  }
+  .price-card .btn { width: 100%; justify-content: center; }
+  .price-card.featured .btn-primary {
+    background: var(--paper);
+    color: var(--swamp-deep);
+  }
+  .price-card.featured .btn-primary:hover {
+    background: var(--mint);
+  }
+
+  /* ===== VETERAN SECTION ===== */
+  .vet-section {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+    position: relative;
+  }
+  .vet-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .vet-badge {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--moss), var(--swamp-deep));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 24px 60px -16px rgba(45, 80, 67, 0.4);
+    margin: 0 auto;
+  }
+  .vet-badge::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 2px solid rgba(245, 241, 232, 0.25);
+    border-radius: 50%;
+  }
+  .vet-badge::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border: 1px dashed rgba(245, 241, 232, 0.18);
+    border-radius: 50%;
+  }
+  .vet-badge-text {
+    color: var(--paper);
+    text-align: center;
+    z-index: 2;
+    padding: 0 24px;
+  }
+  .vet-badge-star {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+  .vet-badge-main {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+  .vet-badge-sub {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mint);
+    line-height: 1.4;
+  }
+  .vet-content h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
+  .vet-content p {
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 18px;
+    max-width: 580px;
+  }
+  .vet-signature {
+    margin-top: 32px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--swamp);
+  }
+  .vet-signature small {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ash);
+    margin-top: 4px;
+  }
+
+  /* ===== CTA BAND ===== */
+  .cta-band {
+    background: var(--swamp-deep);
+    color: var(--paper);
+    padding: 96px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -10%;
+    width: 60%; aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(30, 167, 224, 0.22), transparent 70%);
+  }
+  .cta-band::after {
+    content: '';
+    position: absolute;
+    bottom: -50%; right: -10%;
+    width: 60%; aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(122, 201, 67, 0.16), transparent 70%);
+  }
+  .cta-band > * { position: relative; z-index: 2; }
+  .cta-band h2 {
+    font-size: clamp(34px, 5vw, 56px);
+    margin-bottom: 14px;
+  }
+  .cta-band p {
+    font-size: 18px;
+    color: rgba(245, 241, 232, 0.75);
+    margin-bottom: 36px;
+  }
+  .cta-row {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cta-band .btn-primary {
+    background: var(--fresh);
+    color: var(--swamp-deep);
+  }
+  .cta-band .btn-primary:hover { background: var(--mint); }
+  .cta-band .btn-ghost {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+  .cta-band .btn-ghost:hover {
+    background: var(--paper);
+    color: var(--swamp-deep);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 64px 0 32px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .foot-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .foot-brand img { width: 44px; height: 44px; object-fit: contain; }
+  .foot-brand .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 22px;
+  }
+  .foot-about {
+    color: rgba(245, 241, 232, 0.65);
+    font-size: 14px;
+    max-width: 380px;
+  }
+  .foot-col h4 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--fresh);
+    margin-bottom: 14px;
+  }
+  .foot-col p, .foot-col a {
+    display: block;
+    color: rgba(245, 241, 232, 0.75);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+  .foot-col a:hover { color: var(--fresh); }
+  .foot-bottom {
+    border-top: 1px solid rgba(245, 241, 232, 0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(245, 241, 232, 0.5);
+  }
+  .foot-bottom .tag { color: var(--gold); letter-spacing: 1.5px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { max-width: 360px; margin: 0 auto; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .benefits-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 28px; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; }
+    .vet-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .vet-content p { margin-left: auto; margin-right: auto; }
+    .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+    section.block { padding: 72px 0; }
+    .hero { padding: 48px 0 72px; }
+  }
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-num { font-size: 36px; }
+    .nav-cta { display: none; }
+    .hero-trust { right: 4%; bottom: 0; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Swamp Fresh Logo" class="logo-img">
-        
-        <a href="#contact" class="btn btn-green" style="padding: 10px 20px; font-size: 16px;">Call Now</a>
-    </header>
+<!-- ========= NAV ========= -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <img src="swamp-fresh-logo.png" alt="Swamp Fresh" />
+      <span>Swamp Fresh</span>
+    </a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
 
-    <section class="hero">
-        <h1>Professional Cleaning for Your Exterior</h1>
-        <p>Reclaiming your home’s curb appeal, one bin at a time. Fast, reliable, and affordable.</p>
-        <a href="#services" class="btn btn-green">Book Bin Cleaning</a>
-        <a href="#contact" class="btn btn-white">Get a Pressure Washing Estimate</a>
-    </section>
-
-    <section id="services" class="services">
-        <h2>Our Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Trash Bin Sanitizing</h3>
-                <p>High-temperature pressure cleaning to eliminate odors and bacteria.</p>
-                <div class="price">From $25 / month</div>
-                <a href="#" class="btn btn-green" style="display: block;">Select Plan</a>
-            </div>
-            <div class="card">
-                <h3>Driveway Pressure Washing</h3>
-                <p>Remove oil stains, dirt, and mildew to make your driveway look brand new.</p>
-                <div class="price">Custom Quote</div>
-                <a href="#contact" class="btn btn-blue" style="display: block; background: var(--blue); color: #fff;">Call for Estimate</a>
-            </div>
-            <div class="card">
-                <h3>House Washing</h3>
-                <p>Safe, low-pressure soft washing for your home's siding and exterior.</p>
-                <div class="price">Custom Quote</div>
-                <a href="#contact" class="btn btn-blue" style="display: block; background: var(--blue); color: #fff;">Call for Estimate</a>
-            </div>
+<!-- ========= HERO ========= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">Newberry · Gainesville · Alachua County</span>
+        <h1>Your trash bin is filthy.<br/><em>We make it disappear.</em></h1>
+        <p class="hero-sub">
+          Curbside trash and recycling bin cleaning that kills the bacteria, kills the smell, and kills the mosquitoes. Show up to a clean bin every month — without ever lifting a hose.
+        </p>
+        <div class="hero-ctas">
+          <a href="#pricing" class="btn btn-primary">See Pricing →</a>
+          <a href="#how" class="btn btn-ghost">How It Works</a>
         </div>
-    </section>
-
-    <section class="how-it-works">
-        <h2 style="color: var(--blue);">How It Works</h2>
-        <div class="grid">
-            <div class="card" style="box-shadow: none; background: transparent;">
-                <h3 style="font-size: 48px; margin: 0; color: var(--green);">1</h3>
-                <h4>Request & Schedule</h4>
-                <p>Pick your recurring bin cleaning plan or call us for a custom pressure washing quote.</p>
-            </div>
-            <div class="card" style="box-shadow: none; background: transparent;">
-                <h3 style="font-size: 48px; margin: 0; color: var(--blue);">2</h3>
-                <h4>We Do The Heavy Lifting</h4>
-                <p>We arrive with professional-grade equipment to blast away grime on your scheduled day.</p>
-            </div>
-            <div class="card" style="box-shadow: none; background: transparent;">
-                <h3 style="font-size: 48px; margin: 0; color: var(--green);">3</h3>
-                <h4>Enjoy the Clean</h4>
-                <p>Step outside to a sanitized, odorless, and sparkling home exterior.</p>
-            </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-disc"></div>
+        <img src="swamp-fresh-logo.png" alt="" class="hero-logo-mark" />
+        <div class="hero-trust">
+          <div class="hero-trust-icon">⭐</div>
+          <div class="hero-trust-text">
+            <strong>Veteran Owned</strong>
+            <small>Locally operated</small>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer id="contact">
-        <h2>Ready to get started?</h2>
-        <p>Call or text us today for an estimate!</p>
-        <h3 style="color: var(--green);">Phone: (555) 123-4567</h3>
-        <p>Proudly serving Newberry, Florida and the surrounding areas.</p>
-        <p style="font-size: 14px; margin-top: 30px; color: #999;">&copy; 2026 Swamp Fresh. All rights reserved.</p>
-    </footer>
+<!-- ========= STATS ========= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-num">52x</div>
+        <div class="stat-label">Trips to the curb /yr</div>
+      </div>
+      <div>
+        <div class="stat-num">0</div>
+        <div class="stat-label">Times you'll clean it</div>
+      </div>
+      <div>
+        <div class="stat-num">$30</div>
+        <div class="stat-label">Starting per month</div>
+      </div>
+      <div>
+        <div class="stat-num">48hr</div>
+        <div class="stat-label">First clean scheduled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= BENEFITS ========= -->
+<section class="block" id="benefits">
+  <div class="wrap">
+    <span class="eyebrow">Why bother</span>
+    <h2 class="section-title">Your bin is a buffet for things you don't want around.</h2>
+    <p class="section-lede">
+      Florida heat plus a week of leftover meat scraps equals a problem the trash truck doesn't solve. We handle the part nobody wants to think about.
+    </p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🦠</div>
+        <h3>Bacteria & E. coli</h3>
+        <p>Curbside bins harbor more bacteria than the average toilet seat. We deep sanitize and deodorize on a schedule, every time.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🦟</div>
+        <h3>Mosquitoes & flies</h3>
+        <p>Standing residue at the bottom of your bin is a hatchery in Florida summer. Clean bins break the breeding cycle.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">👃</div>
+        <h3>The smell, gone</h3>
+        <p>Hot pressure rinse, eco-safe sanitizer, full deodorize. Your garage stops smelling like the dump.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= HOW IT WORKS ========= -->
+<section class="how block" id="how">
+  <div class="wrap">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-title">Three steps. You do nothing.</h2>
+    <p class="section-lede">
+      Leave your bin at the curb on pickup day. We'll handle the rest.
+    </p>
+    <div class="steps">
+      <div class="step">
+        <h3>We come on trash day</h3>
+        <p>Right after the truck empties your bin, our trailer rolls up to your curb. No bin pickup needed on your end.</p>
+      </div>
+      <div class="step">
+        <h3>Deep clean & sanitize</h3>
+        <p>Hot pressure wash inside and out, eco-safe sanitizer, full deodorize. All wastewater is captured — nothing hits your driveway or storm drain.</p>
+      </div>
+      <div class="step">
+        <h3>Bin back where it was</h3>
+        <p>Clean, dry, and back at the curb in minutes. You walk out, roll it in, done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= PRICING ========= -->
+<section class="block" id="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Subscription pricing</span>
+    <h2 class="section-title">Set it and forget it.</h2>
+    <p class="section-lede">
+      No contracts, cancel anytime. All plans include one trash bin — add a recycling bin for $5/mo more.
+    </p>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h4 class="price-name">Quarterly</h4>
+        <div class="price-amount">
+          <span class="price-num">$30</span>
+          <span class="price-cycle">/clean</span>
+        </div>
+        <p class="price-blurb">Every 3 months. Good for low-output households.</p>
+        <ul class="price-features">
+          <li>4 cleanings per year</li>
+          <li>Deep pressure wash</li>
+          <li>Eco-safe sanitizer</li>
+          <li>Full deodorize</li>
+          <li>Pay-as-you-go</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Choose Quarterly</a>
+      </div>
+
+      <div class="price-card featured">
+        <span class="featured-tag">★ Most Popular</span>
+        <h4 class="price-name">Monthly</h4>
+        <div class="price-amount">
+          <span class="price-num">$25</span>
+          <span class="price-cycle">/month</span>
+        </div>
+        <p class="price-blurb">12 cleanings per year. Best value for Florida summers.</p>
+        <ul class="price-features">
+          <li>12 cleanings per year</li>
+          <li>Deep pressure wash</li>
+          <li>Eco-safe sanitizer</li>
+          <li>Full deodorize</li>
+          <li>Priority scheduling</li>
+          <li>Free recycling bin add-on for first 90 days</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Start Monthly</a>
+      </div>
+
+      <div class="price-card">
+        <h4 class="price-name">One-Time</h4>
+        <div class="price-amount">
+          <span class="price-num">$45</span>
+          <span class="price-cycle">/clean</span>
+        </div>
+        <p class="price-blurb">Single cleaning. Try us before subscribing.</p>
+        <ul class="price-features">
+          <li>1 deep cleaning</li>
+          <li>Deep pressure wash</li>
+          <li>Eco-safe sanitizer</li>
+          <li>Full deodorize</li>
+          <li>No commitment</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Book One Clean</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========= VETERAN SECTION ========= -->
+<section class="vet-section block">
+  <div class="wrap">
+    <div class="vet-grid">
+      <div class="vet-badge">
+        <div class="vet-badge-text">
+          <div class="vet-badge-star">★</div>
+          <div class="vet-badge-main">Locally<br/>Owned</div>
+          <div class="vet-badge-sub">Gainesville · FL</div>
+        </div>
+      </div>
+      <div class="vet-content">
+        <span class="eyebrow">Who we are</span>
+        <h2>Service that shows up.</h2>
+        <p>
+          Swamp Fresh is proudly owned and operated by a U.S. military veteran right here in Alachua County. The same standards learned in uniform — show up on time, do the work right the first time, take care of the people counting on you — are the ones we bring to every single bin.
+        </p>
+        <p>
+          When you hire us, you're not calling a faceless national chain. You're hiring a neighbor who lives five minutes away and cares about the community. That means consistent quality, real accountability, and the kind of service you can't outsource overseas.
+        </p>
+        <div class="vet-signature">
+          — Swamp Fresh Crew
+          <small>Veteran owned · Locally operated</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========= CTA BAND ========= -->
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Ready to be done with stinky bins?</h2>
+    <p>Most customers are scheduled within 48 hours. No contracts, no surprises.</p>
+    <div class="cta-row">
+      <a href="tel:+13525550100" class="btn btn-primary">📞 Call (352) 555-0100</a>
+      <a href="mailto:hello@swampfresh.com" class="btn btn-ghost">✉ hello@swampfresh.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========= FOOTER ========= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="swamp-fresh-logo.png" alt="" />
+          <span class="name">SWAMP FRESH</span>
+        </div>
+        <p class="foot-about">
+          Curbside trash bin cleaning and pressure washing for Newberry, west Gainesville, and surrounding Alachua County neighborhoods. Veteran owned. Locally operated. Painfully thorough.
+        </p>
+      </div>
+      <div class="foot-col">
+        <h4>Service Area</h4>
+        <p>Newberry</p>
+        <p>West Gainesville</p>
+        <p>Tioga · Jonesville</p>
+        <p>Archer · Oak Park</p>
+        <p>Westbury · High Springs</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:+13525550100">(352) 555-0100</a>
+        <a href="mailto:hello@swampfresh.com">hello@swampfresh.com</a>
+        <p>Mon–Sat · 7am–6pm</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Swamp Fresh Bin Cleaning Co. All rights reserved.</span>
+      <span class="tag">★ Veteran Owned ★ Florida Proud ★</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
